@@ -8,8 +8,8 @@ datasource db {
 }
 
 model User {
-  id          Int      @id @default(autoincrement())
-  email       String   @unique
+  id          Int           @id @default(autoincrement())
+  email       String        @unique
   name        String
   nationality String
   birthDate   DateTime
@@ -17,6 +17,7 @@ model User {
   language    String
   password    String
   phone       String
+  Reservation Reservation[]
 }
 
 model TouristicSpot {
@@ -69,9 +70,14 @@ model LocalBusiness {
   businessCategory String
 }
 
-model Booking {
-  id       Int    @id @default(autoincrement())
-  date     String
-  status   String
-  quantity Int
+model Reservation {
+  id            Int    @id @default(autoincrement())
+  date          String
+  status        String
+  quantity      Int
+  type          String
+  paymentMethod String
+  user          User   @relation(fields: [userId], references: [id])
+  externalId    Int
+  userId        Int
 }
