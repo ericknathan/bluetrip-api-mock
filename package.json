@@ -1,0 +1,27 @@
+{
+  "name": "api-mock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.ts",
+  "scripts": {
+    "dev": "tsx watch .",
+    "lint": "npx eslint --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.14.1",
+    "prisma": "^5.15.0",
+    "tsx": "^4.11.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@prisma/client": "5.15.0",
+    "fastify": "^4.27.0"
+  },
+  "prisma": {
+    "schema": "src/prisma/schema.prisma",
+    "seed": "npx tsx src/seed.ts"
+  }
+}

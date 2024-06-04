@@ -1,0 +1,75 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          Int      @id @default(autoincrement())
+  email       String   @unique
+  name        String
+  nationality String
+  birthDate   DateTime
+  gender      String
+  language    String
+}
+
+model TouristicSpot {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String
+  averageRate Int
+  price       Int
+  phone       String?
+  imageUrl    String
+  category    String
+  events      Event[]
+  Address     Address?
+}
+
+model Address {
+  id              Int           @id @default(autoincrement())
+  street          String
+  city            String
+  zipCode         String
+  state           String
+  neighborhood    String
+  number          String
+  complement      String?
+  touristicSpot   TouristicSpot @relation(fields: [touristicSpotId], references: [id])
+  touristicSpotId Int           @unique
+}
+
+model Event {
+  id              Int           @id @default(autoincrement())
+  name            String
+  description     String
+  price           Int
+  imageUrl        String
+  startDate       String
+  endDate         String
+  touristicSpot   TouristicSpot @relation(fields: [touristicSpotId], references: [id])
+  touristicSpotId Int
+}
+
+model LocalBusiness {
+  id               Int    @id @default(autoincrement())
+  tradeName        String
+  description      String
+  averageRating    Int
+  websiteUrl       String
+  openHour         String
+  closeHour        String
+  phoneNumber      String
+  businessCategory String
+}
+
+model Booking {
+  id       Int    @id @default(autoincrement())
+  date     String
+  status   String
+  quantity Int
+}
