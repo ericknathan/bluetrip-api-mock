@@ -5,7 +5,9 @@
   "main": "src/http/server.ts",
   "scripts": {
     "dev": "tsx watch .",
-    "lint": "npx eslint --fix"
+    "lint": "npx eslint --fix",
+    "build": "tsup src/**/*.ts",
+    "start": "node dist/http/server.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +16,7 @@
     "@types/bcrypt": "^5.0.2",
     "@types/node": "^20.14.1",
     "prisma": "^5.15.0",
+    "tsup": "^8.1.0",
     "tsx": "^4.11.2",
     "typescript": "^5.4.5"
   },
