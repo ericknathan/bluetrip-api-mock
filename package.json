@@ -24,6 +24,7 @@
     "@fastify/cors": "^9.0.1",
     "@prisma/client": "5.15.0",
     "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
     "fastify": "^4.27.0",
     "zod": "^3.23.8"
   },
