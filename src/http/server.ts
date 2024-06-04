@@ -30,7 +30,8 @@ app.register(getReservationList);
 
 app
   .listen({
-    port
+    port,
+    host: "0.0.0.0"
   })
   .then(() => {
     console.log("Server is running on port " + port);
