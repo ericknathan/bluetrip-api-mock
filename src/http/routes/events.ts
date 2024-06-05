@@ -11,9 +11,16 @@ export async function getEvents(app: FastifyInstance) {
 
     findParams.parse(request.query);
 
+    const eventsCount = await prisma.event.count();
+    const skip = Math.floor(Math.random() * eventsCount);
     const events = await prisma.event.findMany({
       include: {
         touristicSpot: true,
+      },
+      take: 5,
+      skip,
+      orderBy: {
+        description: "asc",
       },
     });
 
