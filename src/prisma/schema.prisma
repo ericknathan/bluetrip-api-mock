@@ -30,7 +30,8 @@ model TouristicSpot {
   imageUrl    String
   category    String
   events      Event[]
-  Address     Address?
+  address     Address @relation(fields: [addressId], references: [id])
+  addressId   Int @unique
 }
 
 model Address {
@@ -42,8 +43,7 @@ model Address {
   neighborhood    String
   number          String
   complement      String?
-  touristicSpot   TouristicSpot @relation(fields: [touristicSpotId], references: [id])
-  touristicSpotId Int           @unique
+  touristicSpot TouristicSpot?
 }
 
 model Event {
