@@ -15,7 +15,11 @@ export async function getEvents(app: FastifyInstance) {
     const skip = Math.floor(Math.random() * eventsCount);
     const events = await prisma.event.findMany({
       include: {
-        touristicSpot: true,
+        touristicSpot: {
+          include: {
+            address: true
+          }
+        },
       },
       take: 5,
       skip,
