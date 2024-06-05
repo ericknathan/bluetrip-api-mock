@@ -13,13 +13,13 @@ interface GenerateEventData {
 export function generateEvent(
   data: GenerateEventData
 ): Omit<Prisma.EventCreateManyInput, "touristicSpotId"> {
-  const startDate = faker.date.future({ years: 1 });
+  const startDate = dayjs(faker.date.future({ years: 1 }));
 
   return {
     ...data,
     price: faker.number.float({ min: 0, max: 500 }),
     startDate: startDate.toString(),
-    endDate: dayjs(startDate).add(2, "hour").toString(),
+    endDate: startDate.add(2, "hour").toString(),
   };
 }
 
