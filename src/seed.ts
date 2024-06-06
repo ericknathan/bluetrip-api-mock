@@ -44,7 +44,7 @@ export async function generateTouristicSpot({
       touristicSpot: {
         create: {
           ...data,
-          averageRate: faker.number.float({ min: 3, max: 5 }),
+          averageRate: faker.number.float({ min: 4, max: 5 }),
           price: faker.number.float({ min: 0, max: 500 }),
           phone: faker.phone.number(),
           events: {
@@ -563,6 +563,231 @@ async function main() {
       ],
     }),
   ]);
+
+  await prisma.localBusiness.createMany({
+    data: [
+      {
+        tradeName: "Ocean's Delight Seafood Restaurant",
+        description:
+          "Restaurante especializado em frutos do mar frescos, localizado próximo à praia, oferecendo uma variedade de pratos regionais.",
+        averageRating: faker.number.float({ min: 4, max: 5 }),
+        websiteUrl: "https://www.oceansdelight.com",
+        openHour: "10:00",
+        closeHour: "22:00",
+        phoneNumber: faker.phone.number(),
+        businessCategory: "Restaurante",
+      },
+      {
+        tradeName: "Dive Deep Scuba Center",
+        description:
+          "Centro de mergulho que oferece cursos de certificação e excursões guiadas para explorar os recifes locais.",
+        averageRating: faker.number.float({ min: 4, max: 5 }),
+        websiteUrl: "https://www.divedeep.com",
+        openHour: "08:00",
+        closeHour: "18:00",
+        phoneNumber: faker.phone.number(),
+        businessCategory: "Centro de Mergulho",
+      },
+      {
+        tradeName: "Blue Wave Surf Shop",
+        description:
+          "Loja especializada em equipamentos de surfe, incluindo pranchas, roupas de neoprene e acessórios.",
+        averageRating: faker.number.float({ min: 4, max: 5 }),
+        websiteUrl: "https://www.bluewavesurf.com",
+        openHour: "09:00",
+        closeHour: "20:00",
+        phoneNumber: faker.phone.number(),
+        businessCategory: "Loja de Esportes",
+      },
+      {
+        tradeName: "Seaside Souvenirs",
+        description:
+          "Loja de souvenirs que oferece uma variedade de lembranças temáticas de praia e oceanos.",
+        averageRating: faker.number.float({ min: 4, max: 5 }),
+        websiteUrl: "https://www.seasidesouvenirs.com",
+        openHour: "10:00",
+        closeHour: "22:00",
+        phoneNumber: faker.phone.number(),
+        businessCategory: "Loja de Souvenirs",
+      },
+      {
+        tradeName: "Coral Reef Spa",
+        description:
+          "Spa luxuoso que oferece tratamentos relaxantes com vistas para o oceano, utilizando produtos naturais.",
+        averageRating: faker.number.float({ min: 4, max: 5 }),
+        websiteUrl: "https://www.coralreefspa.com",
+        openHour: "09:00",
+        closeHour: "21:00",
+        phoneNumber: faker.phone.number(),
+        businessCategory: "Spa",
+      },
+      {
+        tradeName: "Marine Life Aquarium",
+        description:
+          "Aquário que exibe uma vasta gama de espécies marinhas e oferece programas educativos para todas as idades.",
+        averageRating: faker.number.float({ min: 4, max: 5 }),
+        websiteUrl: "https://www.marinelifeaquarium.com",
+        openHour: "10:00",
+        closeHour: "18:00",
+        phoneNumber: faker.phone.number(),
+        businessCategory: "Aquário",
+      },
+      {
+        tradeName: "Sunset Cruises",
+        description:
+          "Empresa que oferece cruzeiros ao pôr do sol, proporcionando vistas deslumbrantes e jantares românticos a bordo.",
+        averageRating: faker.number.float({ min: 4, max: 5 }),
+        websiteUrl: "https://www.sunsetcruises.com",
+        openHour: "17:00",
+        closeHour: "21:00",
+        phoneNumber: faker.phone.number(),
+        businessCategory: "Cruzeiros",
+      },
+      {
+        tradeName: "Ocean Explorers Kayak Rentals",
+        description:
+          "Empresa de aluguel de caiaques que oferece equipamentos e excursões guiadas para explorar as águas locais.",
+        averageRating: faker.number.float({ min: 4, max: 5 }),
+        websiteUrl: "https://www.oceanexplorers.com",
+        openHour: "07:00",
+        closeHour: "19:00",
+        phoneNumber: faker.phone.number(),
+        businessCategory: "Aluguel de Equipamentos",
+      },
+      {
+        tradeName: "Underwater Photography",
+        description:
+          "Serviço especializado em fotografia subaquática, oferecendo sessões de fotos personalizadas e workshops.",
+        averageRating: faker.number.float({ min: 4, max: 5 }),
+        websiteUrl: "https://www.underwaterphotography.com",
+        openHour: "09:00",
+        closeHour: "18:00",
+        phoneNumber: faker.phone.number(),
+        businessCategory: "Fotografia",
+      },
+      {
+        tradeName: "Lagoon Lodge",
+        description:
+          "Hotel boutique localizado à beira de um lago, oferecendo acomodações luxuosas e atividades aquáticas.",
+        averageRating: faker.number.float({ min: 4, max: 5 }),
+        websiteUrl: "https://www.lagoonlodge.com",
+        openHour: "24 horas",
+        closeHour: "24 horas",
+        phoneNumber: faker.phone.number(),
+        businessCategory: "Hotel",
+      },
+      {
+        tradeName: "Tropical Watersports",
+        description:
+          "Empresa de esportes aquáticos que oferece uma variedade de atividades, como jet ski, parasailing e wakeboard.",
+        averageRating: faker.number.float({ min: 4, max: 5 }),
+        websiteUrl: "https://www.tropicalwatersports.com",
+        openHour: "08:00",
+        closeHour: "18:00",
+        phoneNumber: faker.phone.number(),
+        businessCategory: "Esportes Aquáticos",
+      },
+      {
+        tradeName: "Reef Conservation Society",
+        description:
+          "ONG dedicada à conservação dos recifes de coral, oferecendo programas de voluntariado e educação ambiental.",
+        averageRating: faker.number.float({ min: 4, max: 5 }),
+        websiteUrl: "https://www.reefconservation.org",
+        openHour: "09:00",
+        closeHour: "17:00",
+        phoneNumber: faker.phone.number(),
+        businessCategory: "ONG",
+      },
+      {
+        tradeName: "Bay View Café",
+        description:
+          "Café com vistas panorâmicas da baía, oferecendo uma variedade de bebidas e pratos leves.",
+        averageRating: faker.number.float({ min: 4, max: 5 }),
+        websiteUrl: "https://www.bayviewcafe.com",
+        openHour: "07:00",
+        closeHour: "19:00",
+        phoneNumber: faker.phone.number(),
+        businessCategory: "Café",
+      },
+      {
+        tradeName: "Fisherman's Wharf",
+        description:
+          "Mercado de peixe local onde os visitantes podem comprar frutos do mar frescos diretamente dos pescadores.",
+        averageRating: faker.number.float({ min: 4, max: 5 }),
+        websiteUrl: "https://www.fishermanswharf.com",
+        openHour: "06:00",
+        closeHour: "14:00",
+        phoneNumber: faker.phone.number(),
+        businessCategory: "Mercado",
+      },
+      {
+        tradeName: "Oceania Boat Rentals",
+        description:
+          "Empresa de aluguel de barcos que oferece uma variedade de embarcações para explorar a costa.",
+        averageRating: faker.number.float({ min: 4, max: 5 }),
+        websiteUrl: "https://www.oceaniaboatrentals.com",
+        openHour: "08:00",
+        closeHour: "18:00",
+        phoneNumber: faker.phone.number(),
+        businessCategory: "Aluguel de Equipamentos",
+      },
+      {
+        tradeName: "Tide Pools Café",
+        description:
+          "Café temático focado em culinária local e frutos do mar, com uma decoração inspirada nas piscinas naturais.",
+        averageRating: faker.number.float({ min: 4, max: 5 }),
+        websiteUrl: "https://www.tidepoolscafe.com",
+        openHour: "07:00",
+        closeHour: "21:00",
+        phoneNumber: faker.phone.number(),
+        businessCategory: "Café",
+      },
+      {
+        tradeName: "Seascape Jewelry",
+        description:
+          "Joalheria especializada em peças inspiradas no oceano, usando materiais naturais como conchas e pérolas.",
+        averageRating: faker.number.float({ min: 4, max: 5 }),
+        websiteUrl: "https://www.seascapejewelry.com",
+        openHour: "10:00",
+        closeHour: "20:00",
+        phoneNumber: faker.phone.number(),
+        businessCategory: "Joalheria",
+      },
+      {
+        tradeName: "Ocean Breeze Yoga",
+        description:
+          "Estúdio de yoga à beira-mar, oferecendo aulas com vista para o oceano e sessões de meditação ao pôr do sol.",
+        averageRating: faker.number.float({ min: 4, max: 5 }),
+        websiteUrl: "https://www.oceanbreezeyoga.com",
+        openHour: "06:00",
+        closeHour: "20:00",
+        phoneNumber: faker.phone.number(),
+        businessCategory: "Yoga",
+      },
+      {
+        tradeName: "Dolphin Tours",
+        description:
+          "Empresa que oferece passeios de barco para observação de golfinhos em seu habitat natural.",
+        averageRating: faker.number.float({ min: 4, max: 5 }),
+        websiteUrl: "https://www.dolphintours.com",
+        openHour: "08:00",
+        closeHour: "17:00",
+        phoneNumber: faker.phone.number(),
+        businessCategory: "Passeios Turísticos",
+      },
+      {
+        tradeName: "Coastal Fitness Center",
+        description:
+          "Academia localizada próxima à praia, oferecendo aulas de fitness ao ar livre e programas de treinamento personalizados.",
+        averageRating: faker.number.float({ min: 4, max: 5 }),
+        websiteUrl: "https://www.coastalfitness.com",
+        openHour: "05:00",
+        closeHour: "22:00",
+        phoneNumber: faker.phone.number(),
+        businessCategory: "Academia",
+      },
+    ],
+  });
 }
 
 main()
