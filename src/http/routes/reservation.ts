@@ -20,7 +20,7 @@ export async function createReservation(app: FastifyInstance) {
     const reservation = await prisma.reservation.create({
       data: {
         ...data,
-        date: z.date.toString(),
+        date: data.date.toISOString(),
         status: "PENDING",
         user: {
           connect: {
