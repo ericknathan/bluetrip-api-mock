@@ -16,6 +16,7 @@ export async function getTouristicSpots(app: FastifyInstance) {
     const touristicSpots = await prisma.touristicSpot.findMany({
       include: {
         events: true,
+        address: true
       },
       take: 5,
       skip,
